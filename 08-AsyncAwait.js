@@ -11,7 +11,7 @@ function gethobbies(username) {
     setTimeout(() => {
       if (username == "Ankrish") {
         resolve(["Gaming", "Listning", "Running", "Swimming"]);
-      } else resolve(`You are not ${username}`);
+      } else resolve(`You are not Ankrish`);
     }, 2000);
   });
 }
