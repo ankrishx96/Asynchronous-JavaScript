@@ -2,6 +2,7 @@
 
 ## Callbacks
 A callback function is a function passed into another function as an argument. Problem :  It create a deep down tree structure which makes our code complex to read.
+
 function setuser(id, name, callback) {
   setTimeout(() => {
     callback({ id, userName: name });
@@ -20,7 +21,8 @@ setuser(10, "Rahul", (user) => {
   gethobbies(user.userName, (hobbies) => console.log(hobbies));
 });
 
-//! To make our code cleaner we use Named function
+## To make our code cleaner we use Named function
+
 setuser(10, "Ankrish", user);
 
 function user(res) {
@@ -31,7 +33,9 @@ function hobbies(res) {
   console.log(res);
 }
 
-//! Promise Hold the eventual result of an async operation.
+## Promise
+Hold the eventual result of an async operation.
+
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve({ id: 1, fname: "Ankrish", lname: "Kandpal" });
@@ -39,11 +43,9 @@ const promise = new Promise((resolve, reject) => {
   }, 2000);
 });
 
-promise
-  .then((res) => console.log(res.fname))
-  .catch((err) => console.log(err.message));
+promise.then((res) => console.log(res.fname)).catch((err) => console.log(err.message));
 
-//! Replacing Promise with Callback
+## Replacing Promise with Callback
 
 function setuser(id, name) {
   return new Promise((resolve, reject) => {
@@ -63,20 +65,20 @@ function gethobbies(username) {
   });
 }
 
-//! Consuming Promises
+## Consuming Promises
 setuser(10, "Ankrish").then((user) =>
   gethobbies(user.userName).then((hobbies) => console.log(hobbies))
 );
 
-//! Promise Resolve
+## Promise Resolve
 const p = Promise.resolve({ id: 1 });
 p.then((result) => console.log(result));
 
-//! Promise Reject
+## Promise Reject
 const r = Promise.reject(new Error("Something Fails"));
 p.catch((err) => console.log(err.message));
 
-//! Parallel Promise
+## Parallel Promise
 const p1 = new Promise((resolve) => {
   setTimeout(() => {
     console.log("Async Operation 1");
@@ -91,11 +93,10 @@ const p2 = new Promise((resolve) => {
   }, 2000);
 });
 
-Promise.all([p1, p2]).then((result) => console.log(result)); //? Completely failed if one of the promise will reject
-Promise.race([p1, p2]).then((result) => console.log(result)); //? Resolve only one promise. Return the promise which resolve first
+Promise.all([p1, p2]).then((result) => console.log(result)); // Completely failed if one of the promise will reject
+Promise.race([p1, p2]).then((result) => console.log(result)); // Resolve only one promise. Return the promise which resolve first
 
-//! Async Await Helps to write async code as sync code
-
+## Async Await Helps to write async code as sync code
 function setuser(id, name) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
