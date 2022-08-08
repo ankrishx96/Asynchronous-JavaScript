@@ -16,6 +16,7 @@ function gethobbies(username) {
   });
 }
 
+//? Consuming Promise
 setuser(10, "Ankrish").then((user) =>
   gethobbies(user.userName).then((hobbies) => console.log(hobbies))
 );
