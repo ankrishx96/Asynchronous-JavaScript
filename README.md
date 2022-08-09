@@ -3,11 +3,11 @@
 ## Callbacks
 A callback function is a function passed into another function as an argument. Problem :  It create a deep down tree structure which makes our code complex to read.
 
-function setuser(id, name, callback) {
-  setTimeout(() => {
-    callback({ id, userName: name });
-  }, 2000);
-}
+          function setuser(id, name, callback) {
+          setTimeout(() => {
+            callback({ id, userName: name });
+           }, 2000);
+          }
 
 function gethobbies(username, callback) {
   setTimeout(() => {
