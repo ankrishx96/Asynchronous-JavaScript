@@ -9,17 +9,18 @@ A callback function is a function passed into another function as an argument. P
        }, 2000);
      }
 
-function gethobbies(username, callback) {
-  setTimeout(() => {
-    if (username == "Ankrish") {
-      callback(["Gaming", "Listning", "Running", "Swimming"]);
-    } else callback(`You are not Ankrish`);
-  }, 2000);
-}
+    function gethobbies(username, callback) {
+      setTimeout(() => {
+        if (username == "Ankrish") {
+          callback(["Gaming", "Listning", "Running", "Swimming"]);
+        } 
+        else callback(`You are not Ankrish`);
+      }, 2000);
+    }
 
-setuser(10, "Rahul", (user) => {
-  gethobbies(user.userName, (hobbies) => console.log(hobbies));
-});
+    setuser(10, "Rahul", (user) => {
+      gethobbies(user.userName, (hobbies) => console.log(hobbies));
+    });
 
 ## To make our code cleaner we use Named function
 
